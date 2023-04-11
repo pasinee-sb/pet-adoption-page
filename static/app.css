@@ -1,0 +1,21 @@
+.pet-home-pic {
+    width: 60%;
+    height: fit-content;
+}
+
+body{
+    margin-top: 5%;
+    margin-left: 15%;
+}
+.pet{
+    display: inline-block;
+    width: 30%;
+}
+.add-button{
+    margin-bottom: 5%;
+}
+
+.pet-detail-pic{
+    width: 30%;
+    height: auto;
+}

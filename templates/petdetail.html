@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+<div class="card-body">
+    <img class="pet-detail-pic" src="{{pet.photo_url}}" alt="{{pet.name}} {{pet.species}}">
+    <p>Name : {{pet.name}}</p>
+    <p>Species: {{pet.species}}</p>
+    <p>Age: {{pet.age}}</p>
+    <p>Notes: {{pet.notes}}</p>
+    {% if pet.available == True%}
+<span>Availability:</span><span class="fw-bold"> Yes</span>
+{%else%}
+<span>Availability: No <span>
+{%endif%}
+
+
+
+</div>
+ <a href="/{{pet.id}}/edit"><button class="btn btn-primary">Edit</button></a>
+
+
+{%endblock%}

@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="add-button"><a href="/add"><button class="btn btn-md btn-primary">Add Pet for adoption</button></a></div>
+{% for msg in get_flashed_messages()%}
+<p class="text-success">
+  {{msg}}
+</p>
+{% endfor %}
+{#sort pet by id#}
+{%for pet in pets| sort(attribute="id")%}
+
+<a href="/{{pet.id}}"><div class="pet">  
+<img class ="pet-home-pic"src="{{pet.photo_url}}" alt="{{pet.species}}"></a>
+<h1>{{pet.name}}</h1>
+<p>Species: {{pet.species}}</p>
+{% if pet.available == True%}
+<span>Availability:</span><span class="fw-bold"> Yes</span>
+{%else%}
+<span>Availability: No <span>
+{%endif%}
+
+</div>
+{%endfor%}
+
+
+
+{%endblock%}
+
+
